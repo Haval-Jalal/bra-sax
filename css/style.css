@@ -1482,3 +1482,28 @@ ul { list-style: none; }
     aspect-ratio: 4/3 !important;
   }
 }
+
+/* ════════════════════════
+   GALLERY — PRICKINDIKATOR
+   ════════════════════════ */
+.gallery-dots {
+  display: none;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 0 24px;
+}
+.gallery-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--border);
+  transition: background .3s ease, transform .3s ease;
+}
+.gallery-dot.active {
+  background: var(--gold);
+  transform: scale(1.35);
+}
+@media (max-width: 768px) {
+  .gallery-dots { display: flex; }
+}

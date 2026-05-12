@@ -136,6 +136,21 @@ window.addEventListener('scroll', () => {
   fabPopup.setAttribute('aria-hidden', 'true');
 }, { passive: true });
 
+// ── Gallery swipe dots ──
+const galleryGrid = document.querySelector('.gallery-grid');
+const galleryDots = document.querySelectorAll('.gallery-dot');
+if (galleryGrid && galleryDots.length) {
+  galleryGrid.addEventListener('scroll', () => {
+    const center = galleryGrid.scrollLeft + galleryGrid.offsetWidth / 2;
+    let closest = 0, minDist = Infinity;
+    galleryGrid.querySelectorAll('.gallery-item').forEach((item, i) => {
+      const dist = Math.abs((item.offsetLeft + item.offsetWidth / 2) - center);
+      if (dist < minDist) { minDist = dist; closest = i; }
+    });
+    galleryDots.forEach((d, i) => d.classList.toggle('active', i === closest));
+  }, { passive: true });
+}
+
 // ── Öppet/Stängt-pill + today-row ──
 function updateHoursUI() {
   const now  = new Date();
