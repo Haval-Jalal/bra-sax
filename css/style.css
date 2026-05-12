@@ -1300,3 +1300,142 @@ ul { list-style: none; }
   .hours-grid { grid-template-columns: 1fr; gap: 48px; }
   .rev-l .about-body { max-width: 100%; }
 }
+
+/* ════════════════════════════════════════
+   MOBILOPTIMERING — komplett genomgång
+   ════════════════════════════════════════ */
+
+/* ── Tablet (≤768px) ── */
+@media (max-width: 768px) {
+
+  /* Global sektion-padding */
+  section,
+  .services,
+  .about,
+  .gallery,
+  .reviews,
+  .location,
+  .hours-section { padding: 64px 0 !important; }
+
+  /* Hero — lägre höjd, kompaktare text */
+  .hero { height: 88svh; min-height: 520px; }
+  .hero-content { padding: 0 20px; }
+  .hero-eyebrow { font-size: .7rem; margin-bottom: 10px; }
+  .hero-title { font-size: clamp(2.6rem, 11vw, 4rem); margin-bottom: 12px; }
+  .hero-tagline { font-size: .8rem; letter-spacing: .12em; margin-bottom: 18px; }
+  .hero-rating { padding: 5px 14px; margin-bottom: 28px; }
+  .hero-stars { font-size: .85rem; }
+  .hero-rating-text { font-size: .72rem; }
+  .hero-cta { gap: 12px; }
+  .hero-scroll-hint { bottom: 24px; }
+
+  /* Stats — 2x2-rutnät */
+  .stats-bar { padding: 20px 12px; }
+  .stats-inner {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .stat { padding: 14px 16px; }
+  .stat strong { font-size: 1.4rem; }
+  .stat span { font-size: .72rem; }
+  .stat-divider { display: none !important; }
+
+  /* Tjänster */
+  .services-grid { grid-template-columns: 1fr; max-width: 420px; margin-left: auto; margin-right: auto; }
+  .service-card { padding: 28px 24px; }
+
+  /* Om oss */
+  .about-inner { grid-template-columns: 1fr; gap: 36px; }
+  .about-img-wrap { height: 260px; border-radius: var(--radius); }
+  .about-text h2 { font-size: 1.8rem; }
+  .about-details { margin: 20px 0 28px; }
+
+  /* Galleri — 2 kolumner, lägre aspect-ratio */
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+  }
+  .gallery-item { aspect-ratio: 4/3; }
+
+  /* Recensioner — smalare kort */
+  .marquee-track .review-card { flex: 0 0 260px; width: 260px; padding: 20px; }
+  .review-text { font-size: .82rem; }
+  .reviews-score { padding: 12px 20px; }
+  .score-number { font-size: 2.2rem; }
+
+  /* Besök oss */
+  .hours-grid { grid-template-columns: 1fr; gap: 36px; }
+  .rev-l .sec-title { font-size: 2.2rem; }
+  .hours-tbl td { padding: 12px 6px; font-size: .875rem; }
+
+  /* Karta & kontakt */
+  .location-inner { grid-template-columns: 1fr; gap: 36px; }
+  .location-map { height: 300px; }
+  .location-info h2 { font-size: 1.7rem; }
+
+  /* Footer */
+  .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .footer { padding: 56px 0 0; }
+}
+
+/* ── Mobil (≤480px) ── */
+@media (max-width: 480px) {
+
+  /* Global padding */
+  section,
+  .services,
+  .about,
+  .gallery,
+  .reviews,
+  .location,
+  .hours-section { padding: 52px 0 !important; }
+
+  /* Container-padding */
+  .container { padding: 0 16px; }
+
+  /* Hero */
+  .hero { height: 100svh; }
+  .hero-title { font-size: clamp(2.4rem, 14vw, 3.2rem); }
+  .hero-cta { flex-direction: column; align-items: center; }
+  .hero-cta a { width: 100%; max-width: 280px; text-align: center; }
+
+  /* Stats — 1 kolumn */
+  .stats-inner { grid-template-columns: 1fr 1fr; }
+  .stat { padding: 12px 8px; }
+
+  /* Galleri — 1 kolumn */
+  .gallery-grid { grid-template-columns: 1fr; }
+  .gallery-item { aspect-ratio: 16/9; }
+
+  /* Recensioner */
+  .marquee-track { gap: 10px; }
+  .marquee-track .review-card { flex: 0 0 240px; width: 240px; padding: 18px; }
+  .reviews-action { padding-top: 4px; }
+  .btn-google-review { font-size: .8rem; padding: 11px 20px; }
+
+  /* Besök oss */
+  .hours-section .wrap { padding: 0 16px; }
+  .rev-l .sec-title { font-size: 1.9rem; }
+  .rev-l .about-body { font-size: .875rem; }
+  .hours-tbl td { padding: 10px 4px; font-size: .82rem; }
+
+  /* Karta */
+  .location-map { height: 260px; }
+
+  /* Footer */
+  .footer-inner { grid-template-columns: 1fr; gap: 28px; }
+
+  /* Sektion-rubriker */
+  .section-header h2 { font-size: 1.75rem; }
+  .section-header { margin-bottom: 40px; }
+
+  /* Tjänster */
+  .service-card { padding: 24px 20px; }
+  .service-price { font-size: 1.35rem; }
+
+  /* Om oss */
+  .about-img-wrap { height: 220px; }
+}
