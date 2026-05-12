@@ -736,6 +736,8 @@ ul { list-style: none; }
   text-align: center;
 }
 .footer-bottom p { color: var(--text-dim); font-size: .8rem; }
+.footer-dev-link { color: var(--text-dim); transition: color var(--transition); }
+.footer-dev-link:hover { color: var(--gold); }
 
 /* ════════════════════════
    ANIMATIONS
