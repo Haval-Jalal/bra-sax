@@ -1439,3 +1439,11 @@ ul { list-style: none; }
   /* Om oss */
   .about-img-wrap { height: 220px; }
 }
+
+/* ── Extra bildfix för galleri på mobil ── */
+@media (max-width: 768px) {
+  .gallery-item { aspect-ratio: 3/2; max-height: 200px; }
+}
+@media (max-width: 480px) {
+  .gallery-item { aspect-ratio: 16/9; max-height: 180px; }
+}
