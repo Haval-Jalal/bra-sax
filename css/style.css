@@ -1447,3 +1447,38 @@ ul { list-style: none; }
 @media (max-width: 480px) {
   .gallery-item { aspect-ratio: 16/9; max-height: 180px; }
 }
+
+/* ── Galleri: horisontell scroll på mobil ── */
+@media (max-width: 768px) {
+  .gallery-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 10px;
+    padding: 0 16px 12px;
+    /* dölj scrollbar men behåll funktionen */
+    scrollbar-width: none;
+    max-height: none;
+  }
+  .gallery-grid::-webkit-scrollbar { display: none; }
+
+  .gallery-item {
+    flex: 0 0 72vw;
+    max-width: 320px;
+    aspect-ratio: 4/3 !important;
+    max-height: none !important;
+    scroll-snap-align: start;
+    border-radius: var(--radius);
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-item {
+    flex: 0 0 80vw;
+    max-width: 280px;
+    aspect-ratio: 4/3 !important;
+  }
+}
